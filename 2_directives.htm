@@ -1,0 +1,25 @@
+<html>
+<title>AngularJS Directives</title>
+<body>
+	<h1>Sample Application</h1>
+	<div ng-app="" ng-init="countries=[{locale:'en-US',name:'United States'},
+	{locale:'en-GB',name:'United Kingdom'},
+	{locale:'en-FR',name:'France'}]">
+	<!-- ng-app directive starts the angular js app
+		 ng-init diretive initializes the app data. Assign variables. -->
+	<p>Enter your Name: <input type="text" ng-model="name"></p>
+	<!-- ng-model directive defines variable name to be used in app-->
+	<p>Hello <span ng-bind="name"></span>!</p>
+	<p>List of Countries with locale:</p>
+	<ol>
+		<li ng-repeat="country in countries">
+			<!-- ng-repeat directive iterates over the array of countires-->
+			{{ 'Country: ' + country.name + ', Locale: ' + country.locale }}
+		</li>
+	</ol>
+</div>
+<script
+src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js">
+</script>
+</body>
+</html>
